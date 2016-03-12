@@ -10,7 +10,7 @@ class Dashboard extends CI_Controller{
 	}
 
 	function index(){
-		redirect('cadmin', 'refresh');
+		redirect('cadminhome', 'refresh');
 	}
 		
 	function logout(){
@@ -18,7 +18,7 @@ class Dashboard extends CI_Controller{
         'isLogin'   => FALSE,//set data telah login
         'username'  => '',//set session username
         'email'     => '',
-        'IDuser' => '',
+        'id_user' => '',
         );  
         $this->session->unset_userdata($sess_array);
         $this->session->sess_destroy();

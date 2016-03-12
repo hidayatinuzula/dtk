@@ -2,6 +2,7 @@
 <html>
   <head>
   <title>MENU UTAMA</title>
+  <link rel="shortcut icon" type="image/icon" href="assets/images/icon.png"/>
   <link href="<?=base_url()?>assets/css/bootstrap.css" rel="stylesheet">
   <link href="<?=base_url()?>assets/css/formlogin.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Raleway' rel='stylesheet' type='text/css'>
@@ -27,23 +28,23 @@
   </div>
   <div class="form">
     <h2>Create an account</h2>
-    <form>
-      <input type="text" placeholder="Username"/>
-      <input type="password" placeholder="Password"/>
-      <input type="email" placeholder="Email Address"/>
-      <input type="tel" placeholder="Phone Number"/>
-      <button>Register</button>
+    <form method="post" id="form-register" action="<?= base_url();?>clogin/do_register">
+      <input type="text" placeholder="Name" name="nama" required/>
+      <input type="text" placeholder="Username" name="username" required/>
+      <input type="password" placeholder="Password" name="password" required/>
+      <input type="email" placeholder="Email Address" name="email" required/>
+      <input type="number" placeholder="Phone Number" name="tel" required/>
+      <button type="submit" name="register" value="Register">Register</button>
     </form>
   </div>
-  <div class="cta"><a href="cchangepassword">Change your password?</a></div>
 </div>
 <script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
   <!-- Toggle Function -->
     <script>
     $('.toggle').click(function(){
-      // Switches the Icon
+
       $(this).children('i').toggleClass('fa-pencil');
-      // Switches the forms  
+
       $('.form').animate({
         height: "toggle",
         'padding-top': 'toggle',

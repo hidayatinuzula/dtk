@@ -36,6 +36,9 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/select2.full.min.js"></script>
+
   </head>
   <body>
 
@@ -53,18 +56,20 @@
   <header id="header">
     <div class="header-inner">
       <!-- Header image -->
-      <img src="assets/images/header-bg.png" alt="img">
+      <img src="assets/images/header-bg.jpg" alt="img">
       <div class="header-overlay">
         <div class="header-content">
         <!-- Start header content slider -->
         <h2 class="header-slide">De-TransKot
           <span>Angkutan Kota Depok</span>
           <span>Search Rute</span>
-          <span>Informasi Rute</span></h2>
+          <span>Informasi Rute</span>
+        </h2>
         <!-- End header content slider -->  
         <!-- Header btn area -->
         <div class="header-btn-area">
-          <a class="download-btn" href="#about">WHAT THIS APP?</a>
+          <a class="knowmore-btn" href="">SEARCH ROUTE ?</a>
+          <a class="download-btn" href="#">WHAT THIS APP ?</a>
         </div>
       </div>
       </div>      
@@ -89,7 +94,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="top-menu" class="nav navbar-nav main-nav menu-scroll">
-            <li class="active"><a href="index.html">HOME</a></li>
+            <li class="active"><a href="#">HOME</a></li>
             <li><a href="#about">ABOUT</a></li> 
             <li><a href="#team">SEARCH</a></li>                    
             <li><a href="#service">INFO</a></li> 
@@ -119,7 +124,7 @@
             <div class="title-area">
               <h2 class="tittle">Deskripsi <span>Aplikasi</span></h2>
               <span class="tittle-line"></span>
-              <p>De-TransKot merupakan aplikasi yang memberikan informasi rute angkutan kota (angkot) Depok yang dapat membantu dalam pencarian dan informasi rute angkutan kota Depok.</p>
+              <p>De-TransKot merupakan aplikasi informasi rute angkutan kota (angkot) Depok. Aplikasi ini dapat membantu pengguna angkutan kota Depok dalam memberikan informasi rute angkot terpendek untuk ke tempat tujuan.</p>
             </div>
             <div class="welcome-content">
               <ul class="wc-table">
@@ -134,7 +139,7 @@
                   <div class="single-wc-content wow fadeInUp">
                     <span class="fa fa-search wc-icon"></span>
                     <h4 class="wc-tittle">Pencarian Rute Angkot</h4>
-                    <p>Aplikasi ini memiliki fitur SEARCH, yang membantu user untuk menentukan rute dalam menggunakan angkot Depok</p>
+                    <p>Aplikasi ini memiliki fitur SEARCH, yang membantu user untuk menentukan rute terpendek dalam menggunakan angkot Depok</p>
                   </div>
                 </li>
                 <li>
@@ -142,6 +147,13 @@
                     <span class="fa fa-info wc-icon"></span>
                     <h4 class="wc-tittle">Informasi Angkot</h4>
                     <p>Aplikasi ini memiliki fitur INFO, yang membantu user untuk mengetahui angkutan-angkutan kota Depok beserta trayeknya</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="single-wc-content wow fadeInUp">
+                    <span class="fa fa-map wc-icon"></span>
+                    <h4 class="wc-tittle">Informasi Peta Rute</h4>
+                    <p>Aplikasi ini akan memberikan informasi rute terpendek angkutan kota kepada user dalam bentuk peta </p>
                   </div>
                 </li>
               </ul>
@@ -155,7 +167,7 @@
 
   <!-- Start call to action -->
   <section id="call-to-action">
-    <img src="assets/images/call-to-action-bg.png" alt="img">
+    <img src="assets/images/maps-bg.png" alt="img">
     <div class="call-to-overlay">
       <div class="container">
         <div class="row">
@@ -166,11 +178,11 @@
                     <div class="testimonial-slider">
                       <!-- single slide -->
                       <div class="single-slide">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcoquat. Duis aute irure d olor in reprehenderit</p>
+                        <p>Menurut data Dinas Perhubungan Kota Depok Tahun 2015 , Depok memiliki 2884 unit angkutan kota</p>
                       </div>
                       <!-- single slide -->
                       <div class="single-slide">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcoquat. Duis aute irure d olor in reprehenderit</p>
+                        <p>Menurut data Dinas Perhubungan Kota Depok Tahun 2015 , Depok memiliki 43 trayek angkutan kota ( 22 trayek Dalam Kota dan 21 trayek Antar Kota Dalam Provinsi  )</p>
                       </div>
                     </div>
                   </div>
@@ -193,18 +205,116 @@
             </div>
               <form action="" class="contact-form">
                 <div class="form-group">                
-                  <input type="text" class="form-control" placeholder="Name">
-                  <input type="text" class="form-control" placeholder="Name">
-                  <button type="submit" data-text="SUBMIT" class="button button-default"><span>SUBMIT</span></button>
+                  <select class="form-control select2">
+                  <div class="col-md-3">
+                          <option selected="selected">--From--</option>
+                          <option value="1">Terminal Depokr</option>
+                          <option value="2">Beji</option>
+                          <option value="3">UI</option>
+                          <option value="4">Kuning</option>
+                          <option value="5">Merah</option>
+                          <option value="6">Orange</option>
+                          <option value="7">Pink</option>
+                          <option value="8">Putih</option>
+                          <option value="9">Ungu</option>
+                  </div>
+                  </select>
+
+                  <select class="form-control select2">
+                  <div class="col-md-3">
+                          <option selected="selected">--To--</option>
+                          <option value="1">Biru Dongker</option>
+                          <option value="2">Biru Muda</option>
+                          <option value="3">Hijau</option>
+                          <option value="4">Kuning</option>
+                          <option value="5">Merah</option>
+                          <option value="6">Orange</option>
+                          <option value="7">Pink</option>
+                          <option value="8">Putih</option>
+                          <option value="9">Ungu</option>
+                        
+                  </div>
+                  </select>
+                  <button onclick="" data-text="SEARCH" class="button button-default"><span>SEARCH</span></button>
+                    <div class="current_location">
+                    <p id="tampilkan"></p>
+                    <a href="#team" onclick="return getLocation();"><h5><i class="fa fa-map-marker"></i> <span>Use Your Current Location</span></h5></a>
+                    <div id="mapcanvas"></div>
+                    </div>
+                    
+ <script src="http://maps.google.com/maps/api/js"></script>
+<script>
+var view = document.getElementById("tampilkan");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        view.innerHTML = "Yah browsernya ngga support Geolocation bro!";
+    }
+}
+ 
+function showPosition(position) {
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
+    latlon = new google.maps.LatLng(lat, lon)
+    mapcanvas = document.getElementById('mapcanvas')
+    mapcanvas.style.height = '500px';
+    mapcanvas.style.width = '500px';
+ 
+    var myOptions = {
+    center:latlon,
+    zoom:14,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+    }
+    
+    //var contentString = latlon;
+
+    var infowindow = new google.maps.InfoWindow({
+    content: 'Latitude: ' + lat + '<br>Longitude: ' + lon
+    });
+
+    var map = new google.maps.Map(document.getElementById("mapcanvas"), myOptions);
+    var marker = new google.maps.Marker({
+        position:latlon,
+        map:map,
+        title: "You are here!",
+        draggable:true
+    });
+
+    marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+}
+ 
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            view.innerHTML = "Yah, mau deteksi lokasi tapi ga boleh :("
+            break;
+        case error.POSITION_UNAVAILABLE:
+            view.innerHTML = "Yah, Info lokasimu nggak bisa ditemukan nih"
+            break;
+        case error.TIMEOUT:
+            view.innerHTML = "Requestnya timeout bro"
+            break;
+        case error.UNKNOWN_ERROR:
+            view.innerHTML = "An unknown error occurred."
+            break;
+    }
+ }
+</script>
+                    
                 </div>
               </form>
+            </div>
+              
           </div>
         </div>
       </div>
     </div>
   </section>
   <!-- Start Team action -->
-
   <!-- Start service section -->
   <section id="service">
     <div class="container">
@@ -216,27 +326,38 @@
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12">
               <div class="contact-left wow fadeInLeft">
-                <h4>Trayek Angkot Dalam Kota</h4>
-                <h4>Trayek Angkot Antar Kota</h4>
-                  <h5>102: Terminal Sawangan - Lebak Bulus</h5>
-                  <h5>105: Terminal Depok - Lebak Bulus</h5>
-                  <h5>106: Parung - Pd.Gede - Lebak Bulus</h5>
-                  <h5>110: Terminal Depok - Ciputat</h5>
-                  <h5>112: Terminal Depok - Kp.Rambutan</h5>
-                  <h5>114: Pangkalan Cinere - Terminal Ciputat</h5>
-                  <h5>128: Terminal Depok - Warung Silah</h5>
-                  <h5>129: Mekarsari - Akses UI - Ps. Minggu</h5>
-                  <h5>129: Cisalak - Akses UI - Ps. Minggu</h5>
-                  <h5>28: Parung - Pd.Petir - Ciputat</h5>
-                  <h5>29: Parung - Cinangka - Ciputat</h5>
-                  <h5>37: Cibinong - Kp. Rambutan</h5>
-                  <h5>37: Cibinong - Cilodong - Kp.Rambutan</h5>
-                  <h5>41: Citeureup - Cibinong - Kp.Rambutan</h5>
-                  <h5>61: Pangkalan Desa Limo - Ps.Minggu</h5>
-                  <h5>79: Cisalak - Radar AURI - Lw.Nanggung</h5>
-                  <h5>97: Cisalak - Cibubur - Taman Bunga</h5>
-                  <h5>M.03: Terminal Depok - Ps.Minggu</h5>
-                  <h5>M.04: Depok Timur - Ps.Minggu </h5>
+                <ul class="nav nav-stacked">
+                  <li class="nav-header" href="#" data-toggle="collapse" data-target="#Menu1">
+                    <a><i class="fa fa-bus"></i> <span>Trayek Angkot Dalam Kota</span> <i class="fa fa-angle-down pull-right"></i></a>
+                    <ul class="nav nav-stacked collapse out" id="Menu1">
+                      <li><a href="#">D.01(Jalur1): Terminal Depok – Depok I Dalam</a></li>
+                      <li><a href="#">D.01(Jalur2): Terminal Depok – Depok II</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-header" href="#" data-toggle="collapse" data-target="#Menu2">
+                    <a><i class="fa fa-bus"></i> <span>Trayek Angkot Antar Kota</span> <i class="fa fa-angle-down pull-right"></i></a>
+                    <ul class="nav nav-stacked collapse out" id="Menu2">
+                      <li><a href="#">102: Terminal Sawangan - Lebak Bulus</a></li>
+                      <li><a href="#">105: Terminal Depok - Lebak Bulus</a></li>
+                      <li><a href="#">106: Parung - Lebak Bulus</a></li>
+                      <li><a href="#">110: Terminal Depok - Ciputat</a></li>
+                      <li><a href="#">112: Terminal Depok - Kp.Rambutan</a></li>
+                      <li><a href="#">114: Pangkalan Cinere - Terminal Ciputat</a></li>
+                      <li><a href="#">128: Terminal Depok - Warung Silah</a></li>
+                      <li><a href="#">129(Jalur1): Mekarsari - Ps. Minggu</a></li>
+                      <li><a href="#">129(Jalur2): Cisalak - Ps. Minggu</a></li>
+                      <li><a href="#">28: Parung - Ciputat</a></li>
+                      <li><a href="#">29: Parung - Ciputat</a></li>
+                      <li><a href="#">37: Cibinong - Kp. Rambutan</a></li>
+                      <li><a href="#">41: Citeureup - Kp.Rambutan</a></li>
+                      <li><a href="#">61: Pangkalan Desa Limo - Ps.Minggu</a></li>
+                      <li><a href="#">79: Cisalak - Lw.Nanggung</a></li>
+                      <li><a href="#">97: Cisalak - Taman Bunga</a></li>
+                      <li><a href="#">M.03: Terminal Depok - Ps.Minggu</a></li>
+                      <li><a href="#">M.04: Depok Timur - Ps.Minggu</a></li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
             </div>
             <div class="col-md-8 col-sm-6 col-xs-12">
@@ -323,14 +444,9 @@
                       <a href="blog-single.html"><img src="assets/images/dtk-splash.png" alt="img"></a>
                     </figure>
                     <div class="blog-title">
-                      <h2><a href="blog-single.html">Here is the post title</a></h2>
-                      <p>Posted by <a class="blog-admin" href="#">admin</a> on <span class="blog-date">23rd july 2015</span></p>
+                      <h2><a href="blog-single.html">Welcome Screen</a></h2>
                     </div>
-                    <p>Sed ut perspiciatis unde mnis is te natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis </p>
-                    <div class="blog-footer">
-                      <a href="#"><span class="fa fa-comment"></span>18 Comments</a>
-                      <a href="#"><span class="fa fa-thumbs-o-up"></span>35 Likes</a>
-                    </div>
+                    <p>Dengan adanya aplikasi mobile De-TransKot pada platform Android maka akan semakin mempermudah pengguna angkutan kota dalam mengakses aplikasi kapanpun dan dimanapun</p>
                   </article>
                 </div>
                 <div class="col-md-4">
@@ -339,14 +455,9 @@
                       <a href="blog-single.html"><img src="assets/images/dtk-search.png" alt="img"></a>
                     </figure>
                     <div class="blog-title">
-                      <h2><a href="blog-single.html">Here is the post title</a></h2>
-                      <p>Posted by <a class="blog-admin" href="#">admin</a> on <span class="blog-date">23rd july 2015</span></p>
+                      <h2><a href="blog-single.html">Search Route</a></h2>
                     </div>
-                    <p>Sed ut perspiciatis unde mnis is te natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis </p>
-                    <div class="blog-footer">
-                      <a href="#"><span class="fa fa-comment"></span>18 Comments</a>
-                      <a href="#"><span class="fa fa-thumbs-o-up"></span>35 Likes</a>
-                    </div>
+                    <p>Pencarian informasi rute angkutan kota dilakukan dengan memilih lokasi awal dan lokasi tujuan Anda dengan tepat</p>
                   </article>
                 </div>
                 <div class="col-md-4">
@@ -355,14 +466,9 @@
                       <a href="blog-single.html"><img src="assets/images/dtk-map.png" alt="img"></a>
                     </figure>
                     <div class="blog-title">
-                      <h2><a href="blog-single.html">Here is the post title</a></h2>
-                      <p>Posted by <a class="blog-admin" href="#">admin</a> on <span class="blog-date">23rd july 2015</span></p>
+                      <h2><a href="blog-single.html">Route Map</a></h2>
                     </div>
-                    <p>Sed ut perspiciatis unde mnis is te natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis </p>
-                    <div class="blog-footer">
-                      <a href="#"><span class="fa fa-comment"></span>18 Comments</a>
-                      <a href="#"><span class="fa fa-thumbs-o-up"></span>35 Likes</a>
-                    </div>
+                    <p>Hasil pencarian yaitu berupa informasi rute terpendek berupa peta dan angkutan kota yang bisa digunakan untuk membantu perjalanan Anda  </p>
                   </article>
                 </div>
               </div>    
@@ -411,5 +517,14 @@
   <script type="text/javascript" src="assets/js/wow.js"></script> 
   <!-- Custom js -->
   <script type="text/javascript" src="assets/js/custom.js"></script>  
+
+   <script>
+      $(function () {
+        //Initialize Select2 Elements
+        $(".select2").select2();
+      });
+    </script>
+
+<center>
   </body>
 </html>

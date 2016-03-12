@@ -29,14 +29,16 @@ class Clogin extends CI_Controller{
                 if($cek){ 
                     $data_user = $this->mlogin->ambil_data_user($username);
                     foreach ($data_user as $data){
+                        $nama = $data['nama'];
                         $username = $data['username'];
-                        $IDuser = $data['id_user'];
+                        $id_user = $data['id_user'];
                         $email = $data['email'];
                     }
                     $sess_array = array(
                         'isLogin'   => TRUE, //set data telah login
+                        'nama'      => $nama,
                         'username'  => $username, //set session username
-                        'IDuser'    => $ID_user, 
+                        'id_user'    => $id_user, 
                         'email'     => $email,
                     );
                     $this->session->set_userdata($sess_array);
@@ -48,4 +50,22 @@ class Clogin extends CI_Controller{
                 }
    /* }*/
 }
+    function do_register(){
+            $data = array(
+                'nama' => $this->input->post("nama"),
+                'username' => $this->input->post("username"),
+                'password' => md5($this->input->post("password")),
+                'email' => $this->input->post("email"),
+                'phone' => $this->input->post("tel"),
+            );
+
+            //insert the form data into database
+            $this->mlogin->insert($data);
+
+            //display success message
+            //$this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Employee details added to Database!!!</div>');
+            redirect('clogin' , 'refresh');
+    }
+
+
 }
